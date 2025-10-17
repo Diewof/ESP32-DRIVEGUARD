@@ -1,0 +1,5 @@
+# Dependencias para el servidor de prueba (test_server.py)
+# Instalar con: pip install -r requirements.txt
+
+Flask==3.0.0
+Pillow==10.1.0

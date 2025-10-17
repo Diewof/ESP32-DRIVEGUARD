@@ -215,10 +215,10 @@ bool initCamera() {
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
 
-  // TAREA 1.3: QVGA (320x240) con calidad JPEG 12
-  config.frame_size = FRAMESIZE_QVGA;  // 320x240
-  config.jpeg_quality = 12;             // Balance calidad/tamaño
-  config.fb_count = 2;                  // Double buffering
+  // TAREA 1.3: VGA (640x480) con calidad JPEG 10
+  config.frame_size = FRAMESIZE_VGA;   // 640x480
+  config.jpeg_quality = 10;            // Balance calidad/tamaño (menor = mejor calidad)
+  config.fb_count = 2;                 // Double buffering
 
   // Inicializar cámara
   esp_err_t err = esp_camera_init(&config);
@@ -253,8 +253,8 @@ bool initCamera() {
   }
 
   Serial.println("[Camera] ✓ Cámara inicializada correctamente");
-  Serial.printf("[Camera] Resolución: QVGA (320x240)\n");
-  Serial.printf("[Camera] Calidad JPEG: 12\n");
+  Serial.printf("[Camera] Resolución: VGA (640x480)\n");
+  Serial.printf("[Camera] Calidad JPEG: 10\n");
   Serial.printf("[Camera] Frame buffers: 2\n");
 
   camera_ready = true;
